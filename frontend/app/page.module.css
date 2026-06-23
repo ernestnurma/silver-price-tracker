@@ -1,0 +1,373 @@
+.container {
+  max-inline-size: 1200px;
+  margin-inline: auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-block-size: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f8fafc 30%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.025em;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.pulseDot {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background-color: var(--color-up);
+  box-shadow: 0 0 8px var(--color-up);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kpiCard {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.kpiLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground-muted);
+}
+
+.kpiValue {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+  font-family: var(--font-mono);
+}
+
+.kpiChange {
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.kpiChange.up {
+  color: var(--color-up);
+}
+
+.kpiChange.down {
+  color: var(--color-down);
+}
+
+.chartContainer {
+  grid-column: span 4;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.chartTitleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.chartTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.chartSubtitle {
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+}
+
+.timeframeTabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem;
+  border-radius: 8px;
+}
+
+.timeframeBtn {
+  background: transparent;
+  border: none;
+  color: var(--foreground-muted);
+  padding: 0.375rem 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timeframeBtn:hover {
+  color: var(--foreground);
+}
+
+.timeframeBtn.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--foreground);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.chartWrapper {
+  inline-size: 100%;
+  block-size: 380px;
+  position: relative;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detailsCard {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-block-end: 0.5rem;
+}
+
+.specsTable {
+  inline-size: 100%;
+  border-collapse: collapse;
+}
+
+.specsRow {
+  border-block-end: 1px solid var(--border-color);
+}
+
+.specsRow:last-child {
+  border-block-end: none;
+}
+
+.specsLabel {
+  padding: 0.875rem 0;
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+  text-align: left;
+}
+
+.specsValue {
+  padding: 0.875rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: right;
+  font-family: var(--font-mono);
+}
+
+.recentTableWrapper {
+  overflow-x: auto;
+}
+
+.recentTable {
+  inline-size: 100%;
+  border-collapse: collapse;
+}
+
+.recentTh {
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--foreground-muted);
+  border-block-end: 2px solid var(--border-color);
+  text-align: left;
+}
+
+.recentTd {
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  border-block-end: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+}
+
+.recentTd:first-child {
+  font-family: var(--font-sans);
+}
+
+.recentTr:last-child .recentTd {
+  border-block-end: none;
+}
+
+/* Custom Tooltip for Chart */
+.customTooltip {
+  background: rgba(13, 16, 23, 0.9);
+  border: 1px solid var(--border-color-hover);
+  border-radius: 8px;
+  padding: 0.75rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  font-family: var(--font-sans);
+}
+
+.tooltipDate {
+  font-size: 0.75rem;
+  color: var(--foreground-muted);
+  margin-block-end: 0.375rem;
+}
+
+.tooltipPrice {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--foreground-silver);
+  font-family: var(--font-mono);
+}
+
+.tooltipRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block-start: 0.25rem;
+}
+
+.tooltipLabel {
+  font-size: 0.75rem;
+  color: var(--foreground-muted);
+}
+
+.tooltipValue {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+/* Shimmer Loading Animation */
+.shimmerEffect {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 75%
+  );
+  background-size: 200% 100%;
+  animation: loadingShimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes loadingShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.kpiShimmer {
+  block-size: 80px;
+  inline-size: 100%;
+}
+
+.chartShimmer {
+  block-size: 380px;
+  inline-size: 100%;
+}
+
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.errorTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-down);
+}
+
+.errorText {
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+  max-inline-size: 400px;
+}
+
+.retryBtn {
+  background: var(--foreground);
+  color: var(--background-dark);
+  border: none;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.retryBtn:hover {
+  opacity: 0.9;
+}
